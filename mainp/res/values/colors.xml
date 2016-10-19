@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="Translucent_0">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_60">#60b3f2</color>
+
+    <color name="color_title">@color/white</color>
+    <color name="titlebar_bg">@color/blue_60</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+</resources>

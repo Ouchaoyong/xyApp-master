@@ -1,0 +1,2 @@
+include ':XX', ':mainp'
+project(':XX').projectDir = new File('XX')

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">XyApp</string>
+    <string name="version_code">XyApp V%s</string>
+</resources>

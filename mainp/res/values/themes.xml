@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Base" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/Translucent_0</item>
+        <item name="android:colorBackground">@color/Translucent_0</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Acitivty</item>
+        <item name="immerseLayout">true</item>
+        <item name="statusBarDarkMode">false</item>
+        <item name="windowTitleHeigth">@dimen/titlebar_higth</item>
+        <item name="windowTitleTextColor">@color/color_title</item>
+        <item name="windowTitleBackground">@color/titlebar_bg</item>
+    </style>
+
+</resources>

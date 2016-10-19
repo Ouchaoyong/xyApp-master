@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'  //指定AndroidManifest目录
+            java.srcDirs = ['src']   //指定java源代码目录
+            resources.srcDirs = ['src'] //指定source目录
+            aidl.srcDirs = ['src']  //指定aidl目录
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']   //指定资源文件目录
+            assets.srcDirs = ['assets']  //指定assets目录
+        }
+        instrumentTest.setRoot('tests')   //测试类型路径
+        debug.setRoot('build-types/debug')  //指定发布类型路径
+        release.setRoot('build-types/release')
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.2.4'
+}

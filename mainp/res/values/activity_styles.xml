@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Animation.Acitivty" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item> <!--启动一个新的activity-->
+        <item name="android:activityOpenExitAnimation">@anim/without_anim</item>  <!--启动一个新的activity时，旧的act没有finish的退出动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/without_anim</item> <!--启动一个新的activity时，旧的act没有finish的退出动画-->
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item> <!--启动一个新的activity时，旧的act finish的退出动画-->
+        <item name="android:taskOpenEnterAnimation">@anim/slide_in_bottom</item>    <!-- 启动的act 运行在新的栈中-->
+        <item name="android:taskOpenExitAnimation">@anim/scale_out</item>
+        <item name="android:taskCloseEnterAnimation">@anim/scale_in</item>      <!-- 关闭act 并关闭栈-->
+        <item name="android:taskCloseExitAnimation">@anim/slide_out_bottom</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:taskToFrontExitAnimation">@anim/scale_out</item>
+        <item name="android:taskToBackEnterAnimation">@anim/scale_in</item>
+        <item name="android:taskToBackExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+</resources>
