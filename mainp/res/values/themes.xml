@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme.Base" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+    <style name="Theme.AppCompat.NoActionBar" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@color/Translucent_0</item>
         <item name="android:colorBackground">@color/Translucent_0</item>
@@ -12,4 +12,13 @@
         <item name="windowTitleBackground">@color/titlebar_bg</item>
     </style>
 
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar" >
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <attr name="windowTitleBackground" format="color" />
+    <attr name="windowTitleTextColor" format="color" />
+    <attr name="windowTitleHeigth" format="dimension" />
+    <attr name="statusBarDarkMode" format="boolean" />
+    <attr name="immerseLayout" format="boolean" />
 </resources>
