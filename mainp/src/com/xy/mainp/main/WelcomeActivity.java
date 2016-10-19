@@ -37,11 +37,11 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     private void initBg() {
-        AlphaAnimation alpha = new AlphaAnimation(0.8f,1f);
-        alpha.setDuration(500);
-        binding.imgWelcomeBg.setAnimation(alpha);
-        alpha.start();
-        alpha.setAnimationListener(new Animation.AnimationListener() {
+        AlphaAnimation anim = new AlphaAnimation(0.1f, 1.0f);
+        anim.setDuration(1000);
+        binding.flContenter.setAnimation(anim);
+        anim.startNow();
+        anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -49,7 +49,7 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                isENter();
+
             }
 
             @Override
@@ -59,7 +59,7 @@ public class WelcomeActivity extends BaseActivity {
         });
     }
 
-    public boolean isENter() {
+    public boolean isEnter() {
         showSnakeMsg("welcome to my App!");
         return true;
     }
