@@ -5,6 +5,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_60">#60b3f2</color>
 
+    <color name="gray_e7">#e7e7e7</color>
+
+    <color name="bg_light">@color/gray_e7</color>
     <color name="color_title">@color/white</color>
     <color name="titlebar_bg">@color/blue_60</color>
     <color name="colorPrimary">#3F51B5</color>

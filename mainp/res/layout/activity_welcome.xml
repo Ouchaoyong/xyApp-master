@@ -2,16 +2,15 @@
 <layout>
     <data class=".ActivityWelComeBinding"></data>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                 android:id="@+id/fl_contenter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+         android:background="@color/bg_light"
         >
         <ImageView
             android:id="@+id/img_welcome_bg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/blue_60"
             android:src="@drawable/jpg_welcome"
+            android:layout_height="match_parent"
             android:scaleType="fitXY"/>
         <TextView
             android:id="@+id/tv_version_welcome"
