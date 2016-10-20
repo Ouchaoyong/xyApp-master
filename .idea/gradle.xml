@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/XX" />
+            <option value="$PROJECT_DIR$/generalutils" />
             <option value="$PROJECT_DIR$/mainp" />
           </set>
         </option>

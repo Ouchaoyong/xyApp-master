@@ -1,5 +1,6 @@
 package com.xyapp;
 
+import com.xy.debug.LogUtils;
 import com.xy.mainp.main.MainPApplication;
 
 /**
@@ -11,5 +12,6 @@ public class MainApplication extends MainPApplication{
     @Override
     public void onCreate() {
         super.onCreate();
+        LogUtils.isLog = true;
     }
 }
