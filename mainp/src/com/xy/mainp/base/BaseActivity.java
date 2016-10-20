@@ -18,17 +18,19 @@ public class BaseActivity extends FragmentActivity {
     }
 
     public void showToastMsg(String str){
-        Toast.makeText(this,str,Toast.LENGTH_SHORT);
+        Toast.makeText(this,str,Toast.LENGTH_SHORT).show();
     }
 
     public void showToastMsg(String str,int druation){
-        Toast.makeText(this,str,druation);
+        Toast.makeText(this,str,druation).show();
     }
 
-    public void showSnakeMsg(String str){
-        Snackbar.make(getWindow().getDecorView(),str,Snackbar.LENGTH_SHORT);
+    public void showSnackMsg(String str){
+        Snackbar.make(getWindow().getDecorView(),str,Snackbar.LENGTH_SHORT).show();
     }
-    public void showSnakeMsg(String str,int druation){
-        Snackbar.make(getWindow().getDecorView(),str,druation);
+
+    public void showSnackMsg(String str,int duration){
+        Snackbar.make(getWindow().getDecorView(),str,duration).show();
     }
+
 }
