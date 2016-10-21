@@ -23,12 +23,18 @@ android {
         debug.setRoot('build-types/debug')  //指定发布类型路径
         release.setRoot('build-types/release')
     }
+
     defaultConfig {
         applicationId APPLICATION_ID
         minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
         targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
         versionCode VERSION_CODE as int
         versionName VERSION_NAME
+
+        manifestPlaceholders = [
+                APPLICATION_ID: "${APPLICATION_ID}",
+                APP_NAME      : "@string/app_name",
+        ]
     }
     productFlavors {
         demo {
