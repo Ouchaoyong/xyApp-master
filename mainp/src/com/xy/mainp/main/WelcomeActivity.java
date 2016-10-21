@@ -3,6 +3,8 @@ package com.xy.mainp.main;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.xy.mainp.ActivityWelComeBinding;
@@ -19,19 +21,19 @@ import com.xy.net.NetWrokUtils;
 public class WelcomeActivity extends BaseActivity {
 
     private ActivityWelComeBinding binding;
-    private boolean mConnetNet;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setImmersiveStatusBar(this,StatusBarUtil.FULL_SCREEN);
+        StatusBarUtil.setImmersiveStatusBar(this, StatusBarUtil.FULL_SCREEN);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
         initView();
     }
 
     private void initView() {
         String appVersionName = SystemConfig.getAppVersionName(this);
-        binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code),appVersionName));
+        binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code), appVersionName));
     }
 
     @Override
@@ -40,10 +42,19 @@ public class WelcomeActivity extends BaseActivity {
         isConnetNet();
     }
 
+    private Runnable runable = new Runnable() {
+        @Override
+        public void run() {
+            MainActivity.enter(WelcomeActivity.this);
+            finish();
+        }
+    };
+
     public void isConnetNet() {
-        if(NetWrokUtils.getInstance(this).isNetWorkConnet()) {
-           MainActivity.enter(this);
-        }else {
+        if (NetWrokUtils.getInstance(this).isNetWorkConnet()) {
+            handler.postDelayed(runable, 2000);
+
+        } else {
             showToastMsg("未连接网络，请打开网络连接");
         }
     }

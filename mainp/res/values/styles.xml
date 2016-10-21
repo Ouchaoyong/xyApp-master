@@ -1,5 +1,10 @@
 <resources>
 
+    <style name="contenter_light_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/bg_light</item>
+    </style>
     <!-- Base application theme. -->
     <style name="Theme.AppTheme" parent="@style/AppTheme.Base">
         <!-- Customize your theme here. -->
