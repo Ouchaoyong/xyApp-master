@@ -22,7 +22,7 @@ public class TabBar extends HorizontalScrollView implements View.OnClickListener
     private List<Item> views;
     private Context mContext;
     private LinearLayout cevView;
-
+    private int index = -1;  //index 代表被选中的子项序号
     public TabBar(Context context) {
         super(context);
         init(context);
@@ -65,9 +65,36 @@ public class TabBar extends HorizontalScrollView implements View.OnClickListener
     public void onClick(View view) {
         setItemClick(view.getId());
     }
-    //设置子项的点击事件
-    private void setItemClick(int id) {
+    /*
+    * 设置被选中的tab
+    */
+    private OnClickChange onClickChange;
 
+    public void setOnClickChange(OnClickChange onClickChange) {
+        this.onClickChange = onClickChange;
+    }
+
+    private void setItemClick(int position) {
+        if (index != position && position>=0 && position < views.size()){
+            boolean isCut  = false;
+            if (onClickChange != null){
+                isCut = onClickChange.onClicked(position);
+            }
+            if (isCut) return;
+            views.get(position).view.setSelected(true);
+            if (index>=0&&position<views.size()){
+                views.get(index).view.setSelected(false);
+            }
+            if (onClickChange != null){
+                onClickChange.onChange(position,index);
+            }
+            index = position;
+        }
+    }
+
+    public interface OnClickChange{
+        boolean onClicked(int newIndex);  //是否被点击
+        void onChange(int newIndex,int oldIndex);  //改变
     }
 
     private class Item{
