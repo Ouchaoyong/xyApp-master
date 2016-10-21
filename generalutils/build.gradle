@@ -5,8 +5,8 @@ android {
         enabled = true
     }
 
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     sourceSets {
         main {
@@ -24,10 +24,10 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -47,6 +47,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     testCompile 'junit:junit:4.12'
 
+    compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'//Retrofit2所需要的包
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4' //ConverterFactory的Gson依赖包
     compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'//ConverterFactory的String依赖包
