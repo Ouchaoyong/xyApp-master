@@ -1,9 +1,12 @@
 package com.xy.debug;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 
 /**
  * Created by John on 2016/10/19.
@@ -31,5 +34,23 @@ public class SystemConfig {
             e.printStackTrace();
             return  "";
         }
+    }
+
+    //获取屏幕高度
+    public static int getScreenHeight(Context context){
+        Display display = ((Activity) context).getWindowManager().getDefaultDisplay();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        display.getMetrics(displayMetrics);
+        return displayMetrics.heightPixels;
+    }
+    //获取屏幕尺寸
+    public static int[] getScreenSize(Context context) {
+        Display mDisplay = ((Activity) context).getWindowManager().getDefaultDisplay();
+        DisplayMetrics metrics = new DisplayMetrics();
+        mDisplay.getMetrics(metrics);
+        int[] size = new int[2];
+        size[0] = metrics.widthPixels;
+        size[1] = metrics.heightPixels;
+        return size;
     }
 }
