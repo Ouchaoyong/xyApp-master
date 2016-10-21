@@ -1,5 +1,6 @@
 package com.xy.mainp.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -41,7 +42,7 @@ public class WelcomeActivity extends BaseActivity {
 
     public void isConnetNet() {
         if(NetWrokUtils.getInstance(this).isNetWorkConnet()) {
-            showSnackMsg("正在初始化。。。");
+           MainActivity.enter(this);
         }else {
             showToastMsg("未连接网络，请打开网络连接");
         }
