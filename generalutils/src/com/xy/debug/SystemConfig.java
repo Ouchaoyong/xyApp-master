@@ -1,4 +1,4 @@
-package com.xy.mainp.utils;
+package com.xy.debug;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

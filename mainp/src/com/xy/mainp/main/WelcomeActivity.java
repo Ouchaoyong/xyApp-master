@@ -1,17 +1,15 @@
 package com.xy.mainp.main;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.xy.mainp.ActivityWelComeBinding;
 import com.xy.mainp.R;
 import com.xy.mainp.base.BaseActivity;
 import com.xy.mainp.utils.StatusBarUtil;
-import com.xy.mainp.utils.SystemConfig;
+import com.xy.debug.SystemConfig;
 import com.xy.net.NetWrokUtils;
 
 /**
