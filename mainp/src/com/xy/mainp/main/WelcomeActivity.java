@@ -50,7 +50,7 @@ public class WelcomeActivity extends BaseActivity {
 
     public void isConnetNet() {
         if (NetWrokUtils.getInstance(this).isNetWorkConnet()) {
-            handler.postDelayed(runable, 2000);
+            handler.postDelayed(runable, 1300);
 
         } else {
             showToastMsg("未连接网络，请打开网络连接");
