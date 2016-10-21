@@ -21,4 +21,15 @@ public class SystemConfig {
             return  1;
         }
     }
+
+    //返回版本名称
+    public static String getAppVersionName(Context context){
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return packageInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return  "";
+        }
+    }
 }

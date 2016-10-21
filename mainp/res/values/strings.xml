@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">XyApp</string>
-    <string name="version_code">XyApp V%s</string>
+    <string name="version_code">XyApp %s</string>
 </resources>

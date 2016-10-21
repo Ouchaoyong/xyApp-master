@@ -29,8 +29,8 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     private void initView() {
-        int appVersionCode = SystemConfig.getAppVersionCode(this);
-        binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code),appVersionCode+""));
+        String appVersionName = SystemConfig.getAppVersionName(this);
+        binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code),appVersionName));
     }
 
     @Override
