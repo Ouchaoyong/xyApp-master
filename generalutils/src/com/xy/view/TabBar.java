@@ -93,8 +93,8 @@ public class TabBar extends HorizontalScrollView implements View.OnClickListener
     }
 
     public interface OnClickChange{
-        boolean onClicked(int newIndex);  //是否被点击
-        void onChange(int newIndex,int oldIndex);  //改变
+        boolean onClicked(int newIndex);  //可以跳转到其它的界面
+        void onChange(int newIndex,int oldIndex);  //可以在这里写入相关界面的切换
     }
 
     private class Item{
