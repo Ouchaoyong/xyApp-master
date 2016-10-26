@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a520it.generalutils.R;
+import com.xy.view.dialog.ESProgressDialog;
 
 import org.w3c.dom.Text;
 
@@ -35,6 +36,31 @@ public class MsgManager{
         }else {
             return true;
         }
+    }
+
+    /**
+     * 等待对话框
+     */
+    private ESProgressDialog esProgressDialog;
+
+    public void ShowLoading(boolean show){
+        if (show){
+            showESLoading(true);
+        }else {
+            stopESLoading();
+        }
+    }
+
+    public void stopESLoading() {
+
+    }
+
+    public void showESLoading(boolean cancelable) {
+        showESLoading(cancelable,300);
+    }
+
+    public void showESLoading(boolean cancelable,int delay){
+
     }
 
     /**

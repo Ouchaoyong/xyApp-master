@@ -1,26 +1,41 @@
-package com.xy.mainp.base;
+package com.xy.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
-import android.widget.Toast;
 
 import com.xy.manager.MsgManager;
 
 /**
- * Created by John on 2016/10/19.
+ * Created by John on 2016/10/26.
  */
 
-public class BaseActivity extends FragmentActivity {
-
+public abstract class BaseActivity extends FragmentActivity {
     private MsgManager msgManager;
-
     @Override
-    protected void onCreate(@Nullable  Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         msgManager = new MsgManager(this);
+        initData();
+        initView(savedInstanceState);
+        loadData();
     }
+
+    /**
+     * 初始化数据
+     */
+    protected  void initData(){
+
+    };
+    /**
+     * 加载网络数据
+     */
+    protected  void loadData(){
+
+    };
+    /**
+     * 加载网络数据
+     */
+    protected abstract void initView(Bundle savedInstanceState);
 
     public void showToastMsg(String str){
         msgManager.showToastMsg(str);
@@ -35,7 +50,6 @@ public class BaseActivity extends FragmentActivity {
     }
 
     public void showSnackMsg(String str,int duration){
-      msgManager.showSnackMsg(str, duration);
+        msgManager.showSnackMsg(str, duration);
     }
-
 }

@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.xy.mainp.ActivityWelComeBinding;
 import com.xy.mainp.R;
-import com.xy.mainp.base.BaseActivity;
+import com.xy.mainp.base.BasePActivity;
 import com.xy.mainp.utils.StatusBarUtil;
 import com.xy.debug.SystemConfig;
 import com.xy.net.NetWrokUtils;
@@ -16,7 +16,7 @@ import com.xy.net.NetWrokUtils;
  * Created by John on 2016/10/19.
  */
 
-public class WelcomeActivity extends BaseActivity {
+public class WelcomeActivity extends BasePActivity {
 
     private ActivityWelComeBinding binding;
     private Handler handler = new Handler();
@@ -24,15 +24,16 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setImmersiveStatusBar(this, StatusBarUtil.FULL_SCREEN);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
-        initView();
     }
 
-    private void initView() {
+    @Override
+    protected void initView(Bundle savedInstanceState) {
+        StatusBarUtil.setImmersiveStatusBar(this, StatusBarUtil.FULL_SCREEN);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
         String appVersionName = SystemConfig.getAppVersionName(this);
         binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code), appVersionName));
     }
+
 
     @Override
     public void onEnterAnimationComplete() {
@@ -50,7 +51,7 @@ public class WelcomeActivity extends BaseActivity {
 
     public void isConnetNet() {
         if (NetWrokUtils.getInstance(this).isNetWorkConnet()) {
-            handler.postDelayed(runable, 1300);
+            handler.postDelayed(runable, 500);
 
         } else {
             showToastMsg("未连接网络，请打开网络连接");

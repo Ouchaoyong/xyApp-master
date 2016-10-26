@@ -53,4 +53,16 @@ public class SystemConfig {
         size[1] = metrics.heightPixels;
         return size;
     }
+
+    //dpTopx
+    public static int dp2px(Context context,int dp){
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int)(metrics.density * dp + 0.5f);
+    }
+
+    public static int px2dp(Context context,int px){
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int)( px / metrics.density + 0.5f);
+    }
+
 }
