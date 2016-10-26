@@ -43,7 +43,7 @@ public class MsgManager{
      */
     private ESProgressDialog esProgressDialog;
 
-    public void ShowLoading(boolean show){
+    public void showLoading(boolean show){
         if (show){
             showESLoading(true);
         }else {
@@ -52,15 +52,19 @@ public class MsgManager{
     }
 
     public void stopESLoading() {
-
+        if (esProgressDialog != null){
+           esProgressDialog.dismiss();
+        }
     }
 
     public void showESLoading(boolean cancelable) {
-        showESLoading(cancelable,300);
-    }
-
-    public void showESLoading(boolean cancelable,int delay){
-
+            if (esProgressDialog == null){
+                esProgressDialog = new ESProgressDialog(context);
+                esProgressDialog.setCancelable(cancelable);
+                if (isCanOpen()){
+                    esProgressDialog.show();
+                }
+            }
     }
 
     /**

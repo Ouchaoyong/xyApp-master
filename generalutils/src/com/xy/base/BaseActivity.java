@@ -52,4 +52,8 @@ public abstract class BaseActivity extends FragmentActivity {
     public void showSnackMsg(String str,int duration){
         msgManager.showSnackMsg(str, duration);
     }
+
+    public void showLoading(boolean show){
+      msgManager.showLoading(show);
+    }
 }

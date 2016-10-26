@@ -3,6 +3,7 @@
     <data />
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
        style="@style/contenter_light_bg"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
         <TextView

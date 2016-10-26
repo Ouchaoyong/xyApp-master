@@ -22,23 +22,15 @@ public class WelcomeActivity extends BasePActivity {
     private Handler handler = new Handler();
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void loadData() {
+        isConnetNet();
     }
-
     @Override
     protected void initView(Bundle savedInstanceState) {
         StatusBarUtil.setImmersiveStatusBar(this, StatusBarUtil.FULL_SCREEN);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
         String appVersionName = SystemConfig.getAppVersionName(this);
         binding.tvVersionWelcome.setText(String.format(getString(R.string.version_code), appVersionName));
-    }
-
-
-    @Override
-    public void onEnterAnimationComplete() {
-        super.onEnterAnimationComplete();
-        isConnetNet();
     }
 
     private Runnable runable = new Runnable() {
@@ -51,7 +43,7 @@ public class WelcomeActivity extends BasePActivity {
 
     public void isConnetNet() {
         if (NetWrokUtils.getInstance(this).isNetWorkConnet()) {
-            handler.postDelayed(runable, 500);
+            handler.postDelayed(runable, 1300);
 
         } else {
             showToastMsg("未连接网络，请打开网络连接");

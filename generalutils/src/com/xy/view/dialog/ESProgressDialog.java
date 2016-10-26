@@ -31,8 +31,7 @@ public class ESProgressDialog extends Dialog {
     }
 
     private void init(Context context) {
-        int size = SystemConfig.dp2px(context, 32);
         GifImageView bar = (GifImageView) LayoutInflater.from(context).inflate(R.layout.dialog_progressbar, null);
-        setContentView(bar, new ViewGroup.LayoutParams(size, size));
+        setContentView(bar);
     }
 }

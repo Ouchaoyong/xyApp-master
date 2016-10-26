@@ -3,6 +3,7 @@ package com.xy.mainp.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 
 import com.xy.mainp.R;
 import com.xy.mainp.base.BasePActivity;
@@ -16,9 +17,10 @@ public class MainActivity extends BasePActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        StatusBarUtil.setImmersiveStatusBar(this);
+        StatusBarUtil.setImmersiveStatusBar(this,StatusBarUtil.FULL_SCREEN);
         setContentView(R.layout.activity_main);
         showSnackMsg("hahahaha");
+        showLoading(true);
     }
 
 

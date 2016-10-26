@@ -56,13 +56,13 @@ public class SystemConfig {
 
     //dpTopx
     public static int dp2px(Context context,int dp){
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return (int)(metrics.density * dp + 0.5f);
+        float density = context.getResources().getDisplayMetrics().density;
+        return (int)(density * dp + 0.5f);
     }
 
     public static int px2dp(Context context,int px){
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return (int)( px / metrics.density + 0.5f);
+        float density = context.getResources().getDisplayMetrics().density;
+        return (int)( px / density + 0.5f);
     }
 
 }
