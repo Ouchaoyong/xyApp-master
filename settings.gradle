@@ -1,2 +1,2 @@
-include ':XX', ':mainp', ':generalutils'
+include ':XX', ':mainp', ':generalutils', ':mylibrary'
 project(':XX').projectDir = new File('XX')

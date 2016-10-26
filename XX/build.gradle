@@ -34,6 +34,7 @@ android {
         manifestPlaceholders = [
                 APPLICATION_ID: "${APPLICATION_ID}",
                 APP_NAME      : "@string/app_name",
+                BAIDU_APPKEY  : "${BAIDU_APPKEY}"
         ]
     }
     productFlavors {

@@ -12,6 +12,6 @@ public class MainApplication extends MainPApplication{
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.isLog = true;
+        ApplicationConfig.initConfig(getApplicationContext());
     }
 }

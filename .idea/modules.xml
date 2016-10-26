@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/XX/XX.iml" filepath="$PROJECT_DIR$/XX/XX.iml" />
       <module fileurl="file://$PROJECT_DIR$/generalutils/generalutils.iml" filepath="$PROJECT_DIR$/generalutils/generalutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/mainp/mainp.iml" filepath="$PROJECT_DIR$/mainp/mainp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/xyApp-master.iml" filepath="$PROJECT_DIR$/xyApp-master.iml" />
     </modules>
   </component>
