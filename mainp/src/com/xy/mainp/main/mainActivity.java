@@ -19,10 +19,7 @@ public class MainActivity extends BasePActivity {
     protected void initView(Bundle savedInstanceState) {
         StatusBarUtil.setImmersiveStatusBar(this,StatusBarUtil.FULL_SCREEN);
         setContentView(R.layout.activity_main);
-        showSnackMsg("hahahaha");
-        showLoading(true);
     }
-
 
     public static void enter(Activity activity){
         Intent intent = new Intent(activity,MainActivity.class);
