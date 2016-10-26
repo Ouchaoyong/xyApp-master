@@ -6,31 +6,36 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
+import com.xy.manager.MsgManager;
+
 /**
  * Created by John on 2016/10/19.
  */
 
 public class BaseActivity extends FragmentActivity {
+
+    private MsgManager msgManager;
+
     @Override
     protected void onCreate(@Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        msgManager = new MsgManager(this);
     }
 
     public void showToastMsg(String str){
-        Toast.makeText(this,str,Toast.LENGTH_SHORT).show();
+        msgManager.showToastMsg(str);
     }
 
     public void showToastMsg(String str,int druation){
-        Toast.makeText(this,str,druation).show();
+        msgManager.showToastMsg(str,druation);
     }
 
     public void showSnackMsg(String str){
-        Snackbar.make(getWindow().getDecorView(),str,Snackbar.LENGTH_SHORT).show();
+        msgManager.showSnackMsg(str);
     }
 
     public void showSnackMsg(String str,int duration){
-        Snackbar.make(getWindow().getDecorView(),str,duration).show();
+      msgManager.showSnackMsg(str, duration);
     }
 
 }

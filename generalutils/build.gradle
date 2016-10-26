@@ -48,6 +48,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile 'com.github.bumptech.glide:glide:3.7.0'  //Glide
+    compile 'com.android.support:design:24.2.0' //design
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'//Retrofit2所需要的包
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4' //ConverterFactory的Gson依赖包
